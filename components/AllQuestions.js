@@ -56,7 +56,12 @@ export default function AllQuestions({ navigation }) {
 
   // QUESTION 2
   findInList = () => {
-    if (listNr === null || listNr === "") {
+    if (
+      q2List.length === 0 ||
+      q2List[0] === "" ||
+      listNr === null ||
+      listNr === ""
+    ) {
       Alert.alert("One of the fields is empty.");
       return;
     }
@@ -71,7 +76,12 @@ export default function AllQuestions({ navigation }) {
 
   // QUESTION 3
   concatenate = () => {
-    if (q3List1.length === 0 || q3List2.length === 0 || q3List1[0] === "" || q3List2[0] === "") {
+    if (
+      q3List1.length === 0 ||
+      q3List2.length === 0 ||
+      q3List1[0] === "" ||
+      q3List2[0] === ""
+    ) {
       Alert.alert("One of the fields is empty.");
       return;
     }
@@ -94,7 +104,12 @@ export default function AllQuestions({ navigation }) {
 
   // QUESTION 5
   binarySearch = () => {
-    if (q5List.length === 0 || binaryNr === null || binaryNr === "") {
+    if (
+      q5List.length === 0 ||
+      q5List[0] === "" ||
+      binaryNr === null ||
+      binaryNr === ""
+    ) {
       Alert.alert("One of the fields is empty.");
       return;
     }
@@ -120,7 +135,7 @@ export default function AllQuestions({ navigation }) {
             " in the sorted array."
         );
         return;
-      } else if (binaryNr > q5List[middleIdx]) {
+      } else if (binaryNr > Number(q5List[middleIdx])) {
         startIdx = middleIdx + 1;
       } else {
         endIdx = middleIdx - 1;
@@ -221,7 +236,7 @@ export default function AllQuestions({ navigation }) {
       <Text style={styles.title}>Question 5 - Binary sort</Text>
       <Text style={styles.text}>
         Create a numeric list using this input, with elements separated by
-        comma, and without spaces. For example: 5,33,2,231. {"\n"}Then write the
+        comma, and without spaces. For example: 5,33,2,24. {"\n"}Then write the
         number to be searched.
       </Text>
       <Text style={styles.text}>
@@ -229,7 +244,7 @@ export default function AllQuestions({ navigation }) {
       </Text>
       <Text style={styles.text}>List: {q5List.toString()}</Text>
       <Input
-        placeholder="1,12,3"
+        placeholder="1,12,41,3"
         autoCapitalize="none"
         onChangeText={(value) => setQ5List(value.split(","))}
       />
