@@ -56,8 +56,8 @@ export default function AllQuestions({ navigation }) {
 
   // QUESTION 2
   findInList = () => {
-    if (listNr === null) {
-      Alert.alert("The field is empty.");
+    if (listNr === null || listNr === "") {
+      Alert.alert("One of the fields is empty.");
       return;
     }
     q2List.includes(listNr)
@@ -71,7 +71,7 @@ export default function AllQuestions({ navigation }) {
 
   // QUESTION 3
   concatenate = () => {
-    if (q3List1.length === 0 || q3List2.length === 0) {
+    if (q3List1.length === 0 || q3List2.length === 0 || q3List1[0] === "" || q3List2[0] === "") {
       Alert.alert("One of the fields is empty.");
       return;
     }
@@ -221,7 +221,7 @@ export default function AllQuestions({ navigation }) {
       <Text style={styles.title}>Question 5 - Binary sort</Text>
       <Text style={styles.text}>
         Create a numeric list using this input, with elements separated by
-        comma, and without spaces. For example: 5,33,2,231. Then write the
+        comma, and without spaces. For example: 5,33,2,231. {"\n"}Then write the
         number to be searched.
       </Text>
       <Text style={styles.text}>
